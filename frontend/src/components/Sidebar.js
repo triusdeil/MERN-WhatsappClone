@@ -1,10 +1,40 @@
 import React from 'react'
 import '../styles/Sidebar.css'
-
+import SidebarChat from './SidebarChat'
+import DonutLargeIcon from '@material-ui/icons/DonutLarge'
+import ChatIcon from '@material-ui/icons/Chat';
+import MoreVertIcon from '@material-ui/icons/MoreVert';
+import {Avatar,IconButton} from '@material-ui/core'
+import {SearchOutlined} from '@material-ui/icons'
 export default function Sidebar() {
     return (
         <div className='sidebar'>
-            I am Sidebar
+                <div className="sidebar__header">
+                    <Avatar src='https://avatars.githubusercontent.com/u/34854558?s=400&u=34e97c6e2fb2e7ea3c56611727bfcf6d8b5098cd&v=4'/>
+                    <div className="sidebar__headerRight">
+                        {/*convierte el icono en un boton */}
+                        <IconButton>
+                            <DonutLargeIcon/>
+                        </IconButton>
+                        <IconButton>
+                            <ChatIcon/>
+                        </IconButton>
+                        <IconButton>
+                            <MoreVertIcon/>
+                        </IconButton>
+                    </div>
+                </div>
+                <div className="sidebar__search">
+                        <div className="sidebar__searchContainer">
+                            <SearchOutlined/>
+                            <input placeholder="Search or start new chat" type="text"/>
+                        </div>
+                </div>
+                <div className="sidebar__chats">
+                    <SidebarChat/>
+                    <SidebarChat/>
+                    <SidebarChat/>
+                </div>
         </div>
     )
 }
